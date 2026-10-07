@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create your CampusHire student career profile."
+    >
+
+    <title>CampusHire | Create Student Profile</title>
+
+    <!-- Student Registration CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/student-register.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         TOP HEADER
+    ========================================== -->
+
+    <header class="register-header">
+
+
+        <!-- CampusHire Logo -->
+
+        <a
+            href="../index.html"
+            class="logo"
+        >
+            Campus<span>Hire</span>
+        </a>
+
+
+        <!-- Existing User -->
+
+        <div class="header-right">
+
+            <span>
+                Already have an account?
+            </span>
+
+            <a href="student-login.html">
+                Sign in
+            </a>
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN REGISTRATION AREA
+    ========================================== -->
+
+    <main class="register-page">
+
+
+        <!-- =====================================
+             LEFT SIDEBAR
+        ====================================== -->
+
+        <aside class="progress-sidebar">
+
+
+            <!-- Sidebar Heading -->
+
+            <div class="progress-heading">
+
+
+                <span class="eyebrow">
+                    BUILD YOUR PROFILE
+                </span>
+
+
+                <h1>
+                    Let's build your
+                    <span>career profile.</span>
+                </h1>
+
+
+                <p>
+                    A stronger profile helps CampusHire
+                    understand your skills, interests and
+                    career goals.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 PROFILE STEPS
+            ================================== -->
+
+            <div class="steps">
+
+
+                <!-- STEP 01 -->
+
+                <div class="step active">
+
+
+                    <div class="step-circle">
+                        01
+                    </div>
+
+
+                    <div class="step-info">
+
+                        <strong>
+                            Basic Information
+                        </strong>
+
+                        <span>
+                            Tell us about yourself
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- STEP 02 -->
+
+                <div class="step">
+
+
+                    <div class="step-circle">
+                        02
+                    </div>
+
+
+                    <div class="step-info">
+
+                        <strong>
+                            Education
+                        </strong>
+
+                        <span>
+                            Academic background
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- STEP 03 -->
+
+                <div class="step">
+
+
+                    <div class="step-circle">
+                        03
+                    </div>
+
+
+                    <div class="step-info">
+
+                        <strong>
+                            Skills
+                        </strong>
+
+                        <span>
+                            Technical & soft skills
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- STEP 04 -->
+
+                <div class="step">
+
+
+                    <div class="step-circle">
+                        04
+                    </div>
+
+
+                    <div class="step-info">
+
+                        <strong>
+                            Projects
+                        </strong>
+
+                        <span>
+                            Projects & certifications
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- STEP 05 -->
+
+                <div class="step">
+
+
+                    <div class="step-circle">
+                        05
+                    </div>
+
+
+                    <div class="step-info">
+
+                        <strong>
+                            Career Goals
+                        </strong>
+
+                        <span>
+                            Your target opportunities
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 PROFILE NOTE
+            ================================== -->
+
+            <div class="profile-note">
+
+
+                <span class="note-icon">
+                    ✦
+                </span>
+
+
+                <div>
+
+                    <strong>
+                        Why complete your profile?
+                    </strong>
+
+
+                    <p>
+                        Your profile will later power
+                        opportunity matching and
+                        career-readiness insights.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =====================================
+             RIGHT FORM AREA
+        ====================================== -->
+
+        <section class="form-area">
+
+
+            <div class="form-container">
+
+
+                <!-- =================================
+                     FORM HEADING
+                ================================== -->
+
+                <div class="form-heading">
+
+
+                    <span class="form-step">
+                        STEP 01 OF 05
+                    </span>
+
+
+                    <h2>
+                        Tell us about yourself
+                    </h2>
+
+
+                    <p>
+                        Start with your basic information.
+                        You can complete the remaining sections later.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROFILE PHOTO
+                ================================== -->
+
+                <div class="profile-photo-row">
+
+
+                    <div class="profile-avatar">
+                        👤
+                    </div>
+
+
+                    <div class="photo-info">
+
+                        <strong>
+                            Profile photo
+                        </strong>
+
+                        <span>
+                            Optional • JPG or PNG
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="upload-button"
+                    >
+                        Upload
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     BASIC INFORMATION FORM
+                ================================== -->
+
+                <form
+                    class="register-form"
+                    id="basicInfoForm"
+                    novalidate
+                >
+
+
+                    <!-- =================================
+                         FULL NAME
+                    ================================== -->
+
+                    <div class="form-group full-width">
+
+
+                        <label for="fullName">
+
+                            Full Name
+
+                            <span>
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         COLLEGE EMAIL
+                    ================================== -->
+
+                    <div class="form-group">
+
+
+                        <label for="collegeEmail">
+
+                            College Email
+
+                            <span>
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="collegeEmail"
+                            name="collegeEmail"
+                            placeholder="example@college.edu"
+                            autocomplete="email"
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         MOBILE NUMBER
+                    ================================== -->
+
+                    <div class="form-group">
+
+
+                        <label for="phone">
+
+                            Mobile Number
+
+                            <span>
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your mobile number"
+                            maxlength="10"
+                            inputmode="numeric"
+                            autocomplete="tel"
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         STUDENT ID
+                    ================================== -->
+
+                    <div class="form-group">
+
+
+                        <label for="studentId">
+
+                            Student ID / Register Number
+
+                            <span>
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="studentId"
+                            name="studentId"
+                            placeholder="Enter your student ID"
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         CURRENT LOCATION
+                    ================================== -->
+
+                    <div class="form-group">
+
+
+                        <label for="location">
+
+                            Current Location
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="City, State"
+                            autocomplete="address-level2"
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         CREATE PASSWORD
+                    ================================== -->
+
+                    <div class="form-group">
+
+
+                        <label for="createPassword">
+
+                            Create Password
+
+                            <span>
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <div class="password-input">
+
+
+                            <input
+                                type="password"
+                                id="createPassword"
+                                name="createPassword"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                            >
+
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                            >
+                                Show
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         CONFIRM PASSWORD
+                    ================================== -->
+
+                    <div class="form-group">
+
+
+                        <label for="confirmPassword">
+
+                            Confirm Password
+
+                            <span>
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <div class="password-input">
+
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Re-enter your password"
+                                autocomplete="new-password"
+                            >
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         TERMS AND PRIVACY
+                    ================================== -->
+
+                    <div class="terms">
+
+
+                        <label for="terms">
+
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                            >
+
+
+                            <span>
+
+                                I agree to the CampusHire
+
+                                <a href="#">
+                                    Terms of Use
+                                </a>
+
+                                and
+
+                                <a href="#">
+                                    Privacy Policy
+                                </a>.
+
+                            </span>
+
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         FORM ACTION BUTTONS
+                    ================================== -->
+
+                    <div class="form-actions">
+
+
+                        <!-- Back -->
+
+                        <a
+                            href="student-login.html"
+                            class="back-button"
+                        >
+                            ← Back
+                        </a>
+
+
+                        <!-- Continue -->
+
+                        <button
+                            type="submit"
+                            class="continue-button"
+                            id="continueButton"
+                        >
+
+                            Continue to Education
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         STUDENT REGISTRATION JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="../js/student-register.js"
+    ></script>
+
+
+</body>
+
+</html>

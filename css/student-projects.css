@@ -1,0 +1,814 @@
+/* =========================================
+   CAMPUSHIRE - STEP 04
+   PROJECTS & CERTIFICATIONS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* =========================================
+   LEFT SIDEBAR
+========================================= */
+
+.progress-sidebar {
+    width: 280px;
+    min-height: 100vh;
+    background: #111827;
+    color: white;
+    padding: 32px 24px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 55px;
+}
+
+.brand-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.brand h2 {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.brand p {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   PROGRESS STEPS
+========================================= */
+
+.progress-line {
+    position: relative;
+}
+
+.progress-step {
+    display: flex;
+    gap: 14px;
+    position: relative;
+    padding-bottom: 34px;
+}
+
+.progress-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 32px;
+    width: 2px;
+    height: 42px;
+    background: #374151;
+}
+
+.progress-step.completed:not(:last-child)::after {
+    background: #2563eb;
+}
+
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #4b5563;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+    background: #111827;
+    z-index: 1;
+}
+
+.progress-step.completed .step-circle {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.progress-step.active .step-circle {
+    border-color: #60a5fa;
+    color: #60a5fa;
+    box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.12);
+}
+
+.step-content h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.step-content p {
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.4;
+}
+
+.progress-step.active .step-content h4 {
+    color: #60a5fa;
+}
+
+.progress-step.completed .step-content h4 {
+    color: #e5e7eb;
+}
+
+
+/* =========================================
+   PROFILE PROGRESS
+========================================= */
+
+.profile-progress {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 30px;
+    padding: 18px;
+    background: #1f2937;
+    border-radius: 14px;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.progress-heading span {
+    font-size: 11px;
+    color: #d1d5db;
+}
+
+.progress-heading strong {
+    font-size: 12px;
+    color: #60a5fa;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #374151;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    width: 80%;
+    height: 100%;
+    background: #2563eb;
+    border-radius: 10px;
+}
+
+.profile-progress p {
+    font-size: 10px;
+    line-height: 1.5;
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    padding: 50px 60px 70px;
+    max-width: 1450px;
+}
+
+
+/* =========================================
+   TOP SECTION
+========================================= */
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 35px;
+}
+
+.step-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 1.5px;
+}
+
+.top-section h1 {
+    font-size: 34px;
+    color: #111827;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 14px;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.profile-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.profile-badge span {
+    font-size: 22px;
+}
+
+.profile-badge strong {
+    display: block;
+    font-size: 12px;
+}
+
+.profile-badge small {
+    display: block;
+    font-size: 10px;
+    color: #9ca3af;
+    margin-top: 2px;
+}
+
+
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
+
+.content-section {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.035);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.section-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: #eff6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.section-heading h2 {
+    font-size: 18px;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.section-heading p {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   FORM CARDS
+========================================= */
+
+.project-form-card,
+.certification-form-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 24px;
+}
+
+.form-card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.form-card-title h3 {
+    font-size: 15px;
+    color: #111827;
+}
+
+.form-card-title span {
+    font-size: 10px;
+    color: #6b7280;
+    background: #e5e7eb;
+    padding: 6px 9px;
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   FORM GROUPS
+========================================= */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 7px;
+}
+
+.form-group label span {
+    color: #dc2626;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    padding: 12px 13px;
+    background: white;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 105px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.field-hint {
+    display: block;
+    margin-top: 6px;
+    color: #9ca3af;
+    font-size: 10px;
+}
+
+
+/* =========================================
+   ADD BUTTON
+========================================= */
+
+.add-button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 9px;
+    padding: 12px 19px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   ADDED ITEMS
+========================================= */
+
+.added-items {
+    margin-top: 18px;
+}
+
+.empty-state {
+    border: 1px dashed #cbd5e1;
+    border-radius: 13px;
+    padding: 28px 20px;
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 30px;
+    margin-bottom: 9px;
+}
+
+.empty-state h3 {
+    font-size: 13px;
+    color: #4b5563;
+    margin-bottom: 5px;
+}
+
+.empty-state p {
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   ADDED PROJECT / CERTIFICATION CARD
+========================================= */
+
+.added-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.item-number {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+.item-header h3 {
+    font-size: 15px;
+    color: #111827;
+}
+
+.delete-button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fecaca;
+    background: #fff;
+    color: #dc2626;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.delete-button:hover {
+    background: #fef2f2;
+}
+
+
+/* =========================================
+   PROJECT META
+========================================= */
+
+.item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 13px 0;
+}
+
+.item-meta span {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.item-meta span:last-child {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.item-description {
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+
+.technology-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 15px;
+}
+
+.technology-list span {
+    background: #f3f4f6;
+    color: #4b5563;
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 10px;
+}
+
+
+/* =========================================
+   PROJECT DETAILS
+========================================= */
+
+.item-details {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 13px;
+    margin-top: 5px;
+}
+
+.item-details strong {
+    display: block;
+    font-size: 10px;
+    color: #9ca3af;
+    margin-bottom: 4px;
+}
+
+.item-details span {
+    font-size: 12px;
+    color: #374151;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+.item-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.item-links a {
+    text-decoration: none;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    background: #eff6ff;
+    padding: 7px 11px;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.item-links a:hover {
+    background: #dbeafe;
+}
+
+
+/* =========================================
+   CERTIFICATION DETAILS
+========================================= */
+
+.certification-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.certification-details > div {
+    background: #f8fafc;
+    border-radius: 9px;
+    padding: 11px;
+}
+
+.certification-details strong {
+    display: block;
+    font-size: 9px;
+    color: #9ca3af;
+    margin-bottom: 4px;
+}
+
+.certification-details span {
+    font-size: 11px;
+    color: #374151;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+
+/* =========================================
+   FORM MESSAGE
+========================================= */
+
+.form-message {
+    min-height: 0;
+    margin-bottom: 15px;
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.form-message.error {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    padding: 12px 14px;
+}
+
+.form-message.success {
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    padding: 12px 14px;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.back-button,
+.continue-button {
+    border-radius: 10px;
+    padding: 13px 21px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-button {
+    background: white;
+    border: 1px solid #d1d5db;
+    color: #4b5563;
+}
+
+.back-button:hover {
+    background: #f9fafb;
+}
+
+.continue-button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.continue-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.continue-button span {
+    font-size: 17px;
+}
+
+.continue-button:disabled {
+    cursor: default;
+    opacity: 0.8;
+    transform: none;
+}
+
+.completed-button {
+    background: #15803d;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .main-content {
+        padding: 40px;
+    }
+
+    .certification-details {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .progress-sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .top-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .top-section h1 {
+        font-size: 27px;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .project-form-card,
+    .certification-form-card {
+        padding: 18px;
+    }
+
+    .certification-details {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .back-button,
+    .continue-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+}

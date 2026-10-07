@@ -1,0 +1,712 @@
+/* =====================================================
+   CAMPUSHIRE
+   LOGIN / ROLE SELECTION
+===================================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f8f9fd;
+
+    color: #172033;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --primary: #635bff;
+
+    --primary-dark: #5149e8;
+
+    --dark: #172033;
+
+    --muted: #7c8494;
+
+    --border: #e5e7ee;
+
+    --white: #ffffff;
+
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.auth-page {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        43% 57%;
+}
+
+
+/* =====================================================
+   LEFT PANEL
+===================================================== */
+
+.auth-intro {
+
+    min-height: 100vh;
+
+    padding:
+        42px 8%;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(99, 91, 255, 0.30),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(66, 153, 225, 0.20),
+            transparent 30%
+        ),
+
+        #171d2d;
+}
+
+
+/* =====================================================
+   DECORATIVE GLOW
+===================================================== */
+
+.auth-intro::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    right: -150px;
+    top: 30%;
+
+}
+
+
+.auth-intro::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(99, 91, 255, 0.06);
+
+    left: -90px;
+    bottom: 10%;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    letter-spacing: -1.2px;
+}
+
+
+.logo span {
+    color: #817aff;
+}
+
+
+/* =====================================================
+   INTRO CONTENT
+===================================================== */
+
+.intro-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 500px;
+}
+
+
+.intro-label {
+
+    color: #9e98ff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+
+.intro-content h1 {
+
+    margin-top: 18px;
+
+    font-size:
+        clamp(
+            42px,
+            4vw,
+            59px
+        );
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+}
+
+
+.intro-content h1 span {
+    color: #827bff;
+}
+
+
+.intro-content > p {
+
+    margin-top: 23px;
+
+    max-width: 460px;
+
+    color: #abb3c4;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   INTRO POINTS
+===================================================== */
+
+.intro-points {
+
+    margin-top: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.intro-points div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #dce1eb;
+
+    font-size: 12px;
+}
+
+
+.intro-points span {
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(99, 91, 255, 0.18);
+
+    color: #928bff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   COPYRIGHT
+===================================================== */
+
+.copyright {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #737d90;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   RIGHT PANEL
+===================================================== */
+
+.auth-panel {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px;
+}
+
+
+.auth-container {
+
+    width:
+        min(
+            540px,
+            100%
+        );
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.auth-heading {
+
+    margin-bottom: 30px;
+}
+
+
+.small-label {
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.auth-heading h2 {
+
+    margin-top: 9px;
+
+    color: var(--dark);
+
+    font-size: 35px;
+
+    letter-spacing: -1.6px;
+}
+
+
+.auth-heading p {
+
+    margin-top: 9px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   ROLE CARDS
+===================================================== */
+
+.role-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.role-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 19px;
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+
+    cursor: pointer;
+}
+
+
+.role-card:hover {
+
+    transform:
+        translateX(5px);
+
+    border-color:
+        #cbc8ff;
+
+    box-shadow:
+        0 14px 32px
+        rgba(35, 40, 70, 0.08);
+}
+
+
+/* =====================================================
+   ROLE ICON
+===================================================== */
+
+.role-icon {
+
+    width: 51px;
+    height: 51px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 22px;
+}
+
+
+.student-icon {
+
+    background:
+        #eeecff;
+}
+
+
+.recruiter-icon {
+
+    background:
+        #e8f4ff;
+}
+
+
+.admin-icon {
+
+    background:
+        #e7f8f1;
+}
+
+
+/* =====================================================
+   ROLE CONTENT
+===================================================== */
+
+.role-info {
+
+    flex: 1;
+}
+
+
+.role-info h3 {
+
+    color: var(--dark);
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.role-info p {
+
+    margin-top: 4px;
+
+    color: #7d8595;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.role-arrow {
+
+    color: var(--primary);
+
+    font-size: 21px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.role-card:hover .role-arrow {
+
+    transform:
+        translateX(5px);
+}
+
+
+/* =====================================================
+   ACCOUNT NOTE
+===================================================== */
+
+.auth-note {
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    color: #8b93a2;
+
+    font-size: 11px;
+}
+
+
+.auth-note a {
+
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   BACK HOME
+===================================================== */
+
+.back-home {
+
+    display: block;
+
+    width: fit-content;
+
+    margin:
+        18px
+        auto
+        0;
+
+    color: #9aa1ae;
+
+    font-size: 10px;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.back-home:hover {
+
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .auth-page {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .auth-intro {
+
+        min-height: 390px;
+
+        padding:
+            35px 7%;
+    }
+
+
+    .intro-content {
+
+        margin-top: 55px;
+    }
+
+
+    .copyright {
+
+        margin-top: 40px;
+    }
+
+
+    .auth-panel {
+
+        min-height: auto;
+
+        padding:
+            65px 7%;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .auth-intro {
+
+        min-height: 350px;
+
+        padding:
+            30px 6%;
+    }
+
+
+    .logo {
+
+        font-size: 23px;
+    }
+
+
+    .intro-content {
+
+        margin-top: 35px;
+    }
+
+
+    .intro-content h1 {
+
+        font-size: 40px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .intro-content > p {
+
+        font-size: 13px;
+    }
+
+
+    .intro-points {
+
+        display: none;
+    }
+
+
+    .auth-panel {
+
+        padding:
+            45px 6%;
+    }
+
+
+    .auth-heading h2 {
+
+        font-size: 29px;
+    }
+
+
+    .role-card {
+
+        padding: 15px;
+    }
+
+
+    .role-icon {
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 19px;
+    }
+
+
+    .role-info p {
+
+        font-size: 10px;
+    }
+
+}

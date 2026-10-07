@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CampusHire recruiter analytics dashboard."
+    >
+
+    <title>CampusHire | Recruiter Analytics</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/recruiter-analytics.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="analytics-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- BRAND -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    C
+                </div>
+
+                <div>
+
+                    <h2>
+                        CampusHire
+                    </h2>
+
+                    <p>
+                        Recruiter Portal
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="navigation">
+
+
+                <!-- DASHBOARD -->
+
+                <a
+                    href="recruiter-dashboard.html"
+                    class="nav-item"
+                    id="dashboardNav"
+                >
+
+                    <span class="nav-icon">
+                        ⌂
+                    </span>
+
+                    Dashboard
+
+                </a>
+
+
+
+                <!-- OPPORTUNITIES -->
+
+                <a
+                    href="create-opportunity.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        💼
+                    </span>
+
+                    Opportunities
+
+                </a>
+
+
+
+                <!-- CANDIDATES -->
+
+                <a
+                    href="recruiter-candidates.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        👥
+                    </span>
+
+                    Candidates
+
+                </a>
+
+
+
+                <!-- APPLICATIONS -->
+
+                <a
+                    href="recruiter-applications.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        📋
+                    </span>
+
+                    Applications
+
+                </a>
+
+
+
+                <!-- ANALYTICS -->
+
+                <a
+                    href="recruiter-analytics.html"
+                    class="nav-item active"
+                >
+
+                    <span class="nav-icon">
+                        📊
+                    </span>
+
+                    Analytics
+
+                </a>
+
+
+            </nav>
+
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+
+                <div class="recruiter-mini-profile">
+
+                    <div
+                        class="mini-avatar"
+                        id="sidebarCompanyAvatar"
+                    >
+                        N
+                    </div>
+
+
+                    <div>
+
+                        <strong id="sidebarCompanyName">
+                            Nova Analytics
+                        </strong>
+
+                        <span>
+                            Recruiter
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutButton"
+                >
+
+                    <span>
+                        ↪
+                    </span>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="page-header">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        RECRUITMENT INTELLIGENCE
+                    </span>
+
+
+                    <h1>
+                        Analytics Dashboard
+                    </h1>
+
+
+                    <p>
+                        Understand your hiring pipeline, candidate quality and recruitment outcomes.
+                    </p>
+
+                </div>
+
+
+                <div class="header-actions">
+
+
+                    <!-- DASHBOARD BUTTON -->
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="dashboardButton"
+                    >
+
+                        ← Dashboard
+
+                    </button>
+
+
+                    <!-- REFRESH -->
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="refreshButton"
+                    >
+
+                        ↻ Refresh
+
+                    </button>
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        💼
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Active Opportunities
+                        </span>
+
+                        <strong id="activeOpportunities">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        📋
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Total Applications
+                        </span>
+
+                        <strong id="totalApplications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        🎯
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Under Review
+                        </span>
+
+                        <strong id="underReview">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✅
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Selected
+                        </span>
+
+                        <strong id="selectedApplications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PERFORMANCE CARDS
+            ================================================== -->
+
+            <section class="performance-grid">
+
+
+                <div class="performance-card">
+
+                    <div class="performance-heading">
+
+                        <span>
+                            Selection Rate
+                        </span>
+
+                        <div class="round-icon green">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <strong id="selectionRate">
+                        0%
+                    </strong>
+
+
+                    <p>
+                        Selected candidates / total applications
+                    </p>
+
+                </div>
+
+
+
+                <div class="performance-card">
+
+                    <div class="performance-heading">
+
+                        <span>
+                            Average Match
+                        </span>
+
+                        <div class="round-icon blue">
+                            ★
+                        </div>
+
+                    </div>
+
+
+                    <strong id="averageMatch">
+                        0%
+                    </strong>
+
+
+                    <p>
+                        Average candidate-opportunity match
+                    </p>
+
+                </div>
+
+
+
+                <div class="performance-card">
+
+                    <div class="performance-heading">
+
+                        <span>
+                            Interview Rate
+                        </span>
+
+                        <div class="round-icon orange">
+                            ◷
+                        </div>
+
+                    </div>
+
+
+                    <strong id="interviewRate">
+                        0%
+                    </strong>
+
+
+                    <p>
+                        Candidates currently in interview stage
+                    </p>
+
+                </div>
+
+
+
+                <div class="performance-card">
+
+                    <div class="performance-heading">
+
+                        <span>
+                            Shortlist Rate
+                        </span>
+
+                        <div class="round-icon purple">
+                            ◎
+                        </div>
+
+                    </div>
+
+
+                    <strong id="shortlistRate">
+                        0%
+                    </strong>
+
+
+                    <p>
+                        Candidates shortlisted from applications
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PIPELINE + INSIGHTS
+            ================================================== -->
+
+            <section class="content-grid">
+
+
+                <!-- PIPELINE -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-label">
+                                RECRUITMENT FUNNEL
+                            </span>
+
+                            <h2>
+                                Candidate Pipeline
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="funnel">
+
+
+                        <div class="funnel-row">
+
+                            <div class="funnel-label">
+
+                                <span>
+                                    Applied
+                                </span>
+
+                                <strong id="pipelineApplied">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-track">
+
+                                <div
+                                    class="progress-fill applied"
+                                    id="barApplied"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="funnel-row">
+
+                            <div class="funnel-label">
+
+                                <span>
+                                    Shortlisted
+                                </span>
+
+                                <strong id="pipelineShortlisted">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-track">
+
+                                <div
+                                    class="progress-fill shortlisted"
+                                    id="barShortlisted"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="funnel-row">
+
+                            <div class="funnel-label">
+
+                                <span>
+                                    Interview
+                                </span>
+
+                                <strong id="pipelineInterview">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-track">
+
+                                <div
+                                    class="progress-fill interview"
+                                    id="barInterview"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="funnel-row">
+
+                            <div class="funnel-label">
+
+                                <span>
+                                    Selected
+                                </span>
+
+                                <strong id="pipelineSelected">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-track">
+
+                                <div
+                                    class="progress-fill selected"
+                                    id="barSelected"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="funnel-row">
+
+                            <div class="funnel-label">
+
+                                <span>
+                                    Rejected
+                                </span>
+
+                                <strong id="pipelineRejected">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-track">
+
+                                <div
+                                    class="progress-fill rejected"
+                                    id="barRejected"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INSIGHTS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-label">
+                                HIRING INSIGHT
+                            </span>
+
+                            <h2>
+                                Recruiter Snapshot
+                            </h2>
+
+                        </div>
+
+                        <span class="insight-icon">
+                            💡
+                        </span>
+
+                    </div>
+
+
+                    <div class="insight-box">
+
+                        <span class="insight-title">
+                            Top Performing Role
+                        </span>
+
+                        <strong id="topRole">
+                            —
+                        </strong>
+
+                        <p id="topRoleDescription">
+                            Recruitment data will appear here.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-box">
+
+                        <span class="insight-title">
+                            Best Candidate Match
+                        </span>
+
+                        <strong id="bestMatch">
+                            —
+                        </strong>
+
+                        <p id="bestMatchDescription">
+                            No candidate data available.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-box">
+
+                        <span class="insight-title">
+                            Current Hiring Status
+                        </span>
+
+                        <strong id="hiringStatus">
+                            Building pipeline
+                        </strong>
+
+                        <p id="hiringStatusDescription">
+                            Start reviewing applications to improve recruitment progress.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 OPPORTUNITY PERFORMANCE
+            ================================================== -->
+
+            <section class="panel full-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            OPPORTUNITY PERFORMANCE
+                        </span>
+
+                        <h2>
+                            Recruitment by Opportunity
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        class="record-count"
+                        id="opportunityRecordCount"
+                    >
+                        0 roles
+                    </span>
+
+                </div>
+
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Opportunity
+                                </th>
+
+                                <th>
+                                    Applications
+                                </th>
+
+                                <th>
+                                    Avg Match
+                                </th>
+
+                                <th>
+                                    Shortlisted
+                                </th>
+
+                                <th>
+                                    Interview
+                                </th>
+
+                                <th>
+                                    Selected
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="opportunityTableBody"
+                        >
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <div
+                    class="empty-table"
+                    id="emptyOpportunityTable"
+                >
+
+                    <div>
+                        📊
+                    </div>
+
+                    <h3>
+                        No recruitment data yet
+                    </h3>
+
+                    <p>
+                        Applications will appear here once candidates apply to your opportunities.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RECENT ACTIVITY
+            ================================================== -->
+
+            <section class="panel full-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            RECENT ACTIVITY
+                        </span>
+
+                        <h2>
+                            Latest Recruitment Updates
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="activity-list"
+                    id="activityList"
+                >
+                </div>
+
+
+                <div
+                    class="empty-table"
+                    id="emptyActivity"
+                >
+
+                    <div>
+                        🕒
+                    </div>
+
+                    <h3>
+                        No recent activity
+                    </h3>
+
+                    <p>
+                        Recruitment activity will appear here.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ANALYTICS JAVASCRIPT
+    ================================================== -->
+
+    <script
+        src="../js/recruiter-analytics.js"
+    ></script>
+
+
+
+    <!-- =================================================
+         GUARANTEED NAVIGATION
+    ================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* -----------------------------------------
+                   DASHBOARD SIDEBAR
+                ------------------------------------------ */
+
+                const dashboardNav =
+                    document.getElementById(
+                        "dashboardNav"
+                    );
+
+
+                if (
+                    dashboardNav
+                ) {
+
+                    dashboardNav.setAttribute(
+                        "href",
+                        "./recruiter-dashboard.html"
+                    );
+
+
+                    dashboardNav.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.preventDefault();
+
+                            window.location.assign(
+                                "./recruiter-dashboard.html"
+                            );
+
+                        }
+                    );
+
+                }
+
+
+
+                /* -----------------------------------------
+                   DASHBOARD TOP BUTTON
+                ------------------------------------------ */
+
+                const dashboardButton =
+                    document.getElementById(
+                        "dashboardButton"
+                    );
+
+
+                if (
+                    dashboardButton
+                ) {
+
+                    dashboardButton.addEventListener(
+                        "click",
+                        function () {
+
+                            window.location.assign(
+                                "./recruiter-dashboard.html"
+                            );
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

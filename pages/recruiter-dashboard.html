@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CampusHire | Recruiter Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/recruiter-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="dashboard-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                C
+            </div>
+
+            <div>
+
+                <h2>
+                    CampusHire
+                </h2>
+
+                <p>
+                    Recruiter Portal
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a
+                href="recruiter-dashboard.html"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="create-opportunity.html"
+                class="nav-item"
+                id="opportunityNav"
+            >
+
+                <span class="nav-icon">
+                    💼
+                </span>
+
+                Opportunities
+
+            </a>
+
+
+            <a
+                href="recruiter-candidates.html"
+                class="nav-item"
+                id="candidateNav"
+            >
+
+                <span class="nav-icon">
+                    👥
+                </span>
+
+                Candidates
+
+            </a>
+
+
+            <a
+                href="recruiter-applications.html"
+                class="nav-item"
+                id="applicationNav"
+            >
+
+                <span class="nav-icon">
+                    📋
+                </span>
+
+                Applications
+
+            </a>
+
+
+            <a
+                href="recruiter-analytics.html"
+                class="nav-item"
+                id="analyticsNav"
+            >
+
+                <span class="nav-icon">
+                    📊
+                </span>
+
+                Analytics
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="recruiter-mini-profile">
+
+                <div
+                    class="mini-avatar"
+                    id="sidebarCompanyAvatar"
+                >
+                    N
+                </div>
+
+                <div>
+
+                    <strong id="sidebarCompanyName">
+                        Nova Analytics
+                    </strong>
+
+                    <span>
+                        Recruiter
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+
+                <span>
+                    ↪
+                </span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-bar">
+
+            <div>
+
+                <span class="page-label">
+                    RECRUITER DASHBOARD
+                </span>
+
+
+                <h1>
+
+                    Welcome back,
+
+                    <span id="recruiterName">
+                        Recruiter
+                    </span>
+
+                    👋
+
+                </h1>
+
+
+                <p>
+                    Manage opportunities, review candidates and track recruitment progress.
+                </p>
+
+            </div>
+
+
+            <div class="company-profile">
+
+                <div
+                    class="company-avatar"
+                    id="companyAvatar"
+                >
+                    N
+                </div>
+
+
+                <div>
+
+                    <strong id="topCompanyName">
+                        Nova Analytics
+                    </strong>
+
+                    <span>
+                        Recruiter Portal
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             COMPANY BANNER
+        ====================================================== -->
+
+        <section class="company-banner">
+
+            <div class="banner-left">
+
+                <div class="banner-icon">
+                    🏢
+                </div>
+
+
+                <div>
+
+                    <span>
+                        COMPANY PROFILE
+                    </span>
+
+
+                    <h2 id="bannerCompanyName">
+                        Nova Analytics
+                    </h2>
+
+
+                    <p>
+                        Your recruitment workspace is ready.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="primary-button"
+                id="createOpportunityButton"
+            >
+
+                + Create Opportunity
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             STATISTICS
+        ====================================================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    💼
+                </div>
+
+                <div>
+
+                    <span>
+                        Active Opportunities
+                    </span>
+
+                    <strong id="opportunityCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    📋
+                </div>
+
+                <div>
+
+                    <span>
+                        Applications
+                    </span>
+
+                    <strong id="applicationCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    🎯
+                </div>
+
+                <div>
+
+                    <span>
+                        Under Review
+                    </span>
+
+                    <strong id="reviewCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✅
+                </div>
+
+                <div>
+
+                    <span>
+                        Selected
+                    </span>
+
+                    <strong id="selectedCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DASHBOARD GRID
+        ====================================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- OPPORTUNITIES -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            RECRUITMENT PIPELINE
+                        </span>
+
+                        <h2>
+                            Your Opportunities
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="text-button"
+                        id="viewAllOpportunities"
+                    >
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="opportunity-list"
+                    id="opportunityList"
+                >
+                </div>
+
+
+                <div
+                    class="empty-box"
+                    id="opportunityEmpty"
+                    style="display:none;"
+                >
+
+                    <div>
+                        💼
+                    </div>
+
+                    <p>
+                        No opportunities created yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PIPELINE -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            RECRUITMENT SNAPSHOT
+                        </span>
+
+                        <h2>
+                            Candidate Pipeline
+                        </h2>
+
+                    </div>
+
+
+                    <span class="card-icon">
+                        📊
+                    </span>
+
+                </div>
+
+
+                <div class="pipeline">
+
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Applied
+                            </span>
+
+                            <strong id="appliedPipeline">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="pipeline-bar">
+
+                            <div
+                                class="pipeline-fill applied"
+                                id="appliedBar"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Shortlisted
+                            </span>
+
+                            <strong id="shortlistedPipeline">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="pipeline-bar">
+
+                            <div
+                                class="pipeline-fill shortlisted"
+                                id="shortlistedBar"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Interview
+                            </span>
+
+                            <strong id="interviewPipeline">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="pipeline-bar">
+
+                            <div
+                                class="pipeline-fill interview"
+                                id="interviewBar"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Selected
+                            </span>
+
+                            <strong id="selectedPipeline">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="pipeline-bar">
+
+                            <div
+                                class="pipeline-fill selected"
+                                id="selectedBar"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="pipeline-note">
+
+                    <span>
+                        💡
+                    </span>
+
+                    <p>
+                        Candidate stages will update as recruiters process applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             QUICK ACTIONS
+        ====================================================== -->
+
+        <section class="actions-section">
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    QUICK ACTIONS
+                </span>
+
+                <h2>
+                    Recruitment Workspace
+                </h2>
+
+            </div>
+
+
+            <div class="actions-grid">
+
+
+                <button
+                    type="button"
+                    class="action-card"
+                    id="createOpportunityAction"
+                >
+
+                    <div class="action-icon blue">
+                        +
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Create Opportunity
+                        </strong>
+
+                        <span>
+                            Publish a new campus role.
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="action-card"
+                    id="candidateAction"
+                >
+
+                    <div class="action-icon purple">
+                        👥
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            View Candidates
+                        </strong>
+
+                        <span>
+                            Explore student profiles and matches.
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="action-card"
+                    id="applicationAction"
+                >
+
+                    <div class="action-icon orange">
+                        📋
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Review Applications
+                        </strong>
+
+                        <span>
+                            Manage the recruitment pipeline.
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="action-card"
+                    id="analyticsAction"
+                >
+
+                    <div class="action-icon green">
+                        📈
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Recruitment Analytics
+                        </strong>
+
+                        <span>
+                            View hiring activity insights.
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MATCHING INFORMATION
+        ====================================================== -->
+
+        <section class="matching-card">
+
+
+            <div class="matching-icon">
+                🎯
+            </div>
+
+
+            <div>
+
+                <span>
+                    CAMPUSHIRE CANDIDATE MATCHING
+                </span>
+
+
+                <h2>
+                    Find candidates based on requirements, not just resumes.
+                </h2>
+
+
+                <p>
+                    Define skills, CGPA, graduation year, backlog requirements
+                    and work preferences. CampusHire can then identify students
+                    who match those requirements.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="outline-button"
+                id="matchingButton"
+            >
+
+                Explore Matching
+
+            </button>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     DASHBOARD JAVASCRIPT
+====================================================== -->
+
+<script src="../js/recruiter-dashboard.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CampusHire | Opportunities</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/opportunities.css"
+    >
+
+    <!-- Fallback styling for dynamic opportunity cards -->
+    <style>
+
+        .opportunity-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 22px;
+            margin-top: 18px;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+        }
+
+        .opportunity-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .company-logo {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .opportunity-heading {
+            flex: 1;
+        }
+
+        .opportunity-heading h3 {
+            margin: 0 0 5px;
+            font-size: 17px;
+            color: #111827;
+        }
+
+        .opportunity-heading p {
+            margin: 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .match-badge {
+            background: #dcfce7;
+            color: #15803d;
+            border-radius: 20px;
+            padding: 7px 11px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .opportunity-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .opportunity-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 16px;
+        }
+
+        .matched-skill {
+            background: #eef2ff;
+            color: #4338ca;
+            padding: 6px 9px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .opportunity-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .view-details,
+        .apply-opportunity {
+            padding: 10px 15px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .view-details {
+            border: 1px solid #d1d5db;
+            background: white;
+            color: #374151;
+        }
+
+        .apply-opportunity {
+            border: none;
+            background: #2563eb;
+            color: white;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 45px 20px;
+            color: #64748b;
+        }
+
+        .empty-state h3 {
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .profile-target {
+            color: #cbd5e1;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.58);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 9999;
+        }
+
+        .details-modal {
+            background: white;
+            width: min(720px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 18px;
+            padding: 28px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 18px;
+            top: 15px;
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background: #f1f5f9;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding-right: 40px;
+        }
+
+        .modal-header h2 {
+            margin: 0 0 6px;
+            color: #111827;
+        }
+
+        .modal-header p {
+            margin: 0;
+            color: #64748b;
+        }
+
+        .modal-match {
+            margin-top: 20px;
+            padding: 14px;
+            border-radius: 11px;
+            background: #eef2ff;
+            color: #4338ca;
+            font-weight: 700;
+        }
+
+        .modal-section {
+            margin-top: 22px;
+        }
+
+        .modal-section h4 {
+            margin-bottom: 9px;
+            color: #111827;
+        }
+
+        .modal-section p {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .modal-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-info div {
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 9px;
+        }
+
+        .modal-info strong {
+            display: block;
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .modal-info span {
+            font-size: 13px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .modal-skill {
+            display: inline-block;
+            padding: 6px 9px;
+            border-radius: 18px;
+            margin: 3px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .modal-skill.matched {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .modal-skill.missing {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .modal-apply {
+            margin-top: 24px;
+            width: 100%;
+            border: none;
+            background: #2563eb;
+            color: white;
+            padding: 13px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        @media (max-width: 700px) {
+
+            .opportunity-top {
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .modal-info {
+                grid-template-columns: 1fr;
+            }
+
+            .opportunity-actions {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                C
+            </div>
+
+            <div>
+                <h2>CampusHire</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="student-dashboard.html">
+                🏠
+                <span>Dashboard</span>
+            </a>
+
+            <a href="student-dashboard.html">
+                👤
+                <span>My Profile</span>
+            </a>
+
+            <a
+                href="opportunities.html"
+                class="active"
+            >
+                🎯
+                <span>Opportunities</span>
+            </a>
+
+            <a href="applications.html">
+                📋
+                <span>My Applications</span>
+            </a>
+
+            <a href="#">
+                🔔
+                <span>Notifications</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="matching-tip">
+
+                <strong>💡 Matching Tip</strong>
+
+                <p>
+                    Keep your skills updated to
+                    improve matching.
+                </p>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                onclick="window.location.href='student-login.html'"
+            >
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    OPPORTUNITY MATCHING
+                </p>
+
+                <h1>
+                    Opportunities for you
+                </h1>
+
+                <p class="page-subtitle">
+                    CampusHire compares your profile
+                    with opportunity requirements and
+                    explains why each opportunity matches.
+                </p>
+
+            </div>
+
+
+            <button
+                class="dashboard-button"
+                onclick="window.location.href='student-dashboard.html'"
+            >
+                ← Dashboard
+            </button>
+
+        </div>
+
+
+
+        <!-- PROFILE SUMMARY -->
+
+        <section class="matching-profile">
+
+            <div class="profile-left">
+
+                <div
+                    class="profile-avatar"
+                    id="profileAvatar"
+                >
+                    S
+                </div>
+
+                <div>
+
+                    <p class="profile-label">
+                        PROFILE USED FOR MATCHING
+                    </p>
+
+                    <h2 id="profileName">
+                        Student
+                    </h2>
+
+                    <p
+                        class="profile-target"
+                        id="targetRolesText"
+                    >
+                        Your target roles will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-stats">
+
+                <div>
+                    <strong id="skillsCount">
+                        0
+                    </strong>
+                    <span>Skills</span>
+                </div>
+
+                <div>
+                    <strong id="projectsCount">
+                        0
+                    </strong>
+                    <span>Projects</span>
+                </div>
+
+                <div>
+                    <strong id="certificationsCount">
+                        0
+                    </strong>
+                    <span>Certifications</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- OPPORTUNITIES -->
+
+        <section class="opportunity-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        FIND YOUR FIT
+                    </p>
+
+                    <h2>
+                        Available Opportunities
+                    </h2>
+
+                </div>
+
+
+                <div class="opportunity-total">
+
+                    <strong id="opportunityCount">
+                        0
+                    </strong>
+
+                    <span>
+                        opportunities
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FILTERS -->
+
+            <div class="filter-row">
+
+                <select id="roleFilter">
+
+                    <option value="">
+                        All Roles
+                    </option>
+
+                </select>
+
+
+                <select id="locationFilter">
+
+                    <option value="">
+                        All Locations
+                    </option>
+
+                </select>
+
+
+                <select id="workModeFilter">
+
+                    <option value="">
+                        All Work Modes
+                    </option>
+
+                </select>
+
+
+                <select id="matchFilter">
+
+                    <option value="">
+                        Any Match
+                    </option>
+
+                    <option value="80">
+                        80%+ Match
+                    </option>
+
+                    <option value="70">
+                        70%+ Match
+                    </option>
+
+                    <option value="60">
+                        60%+ Match
+                    </option>
+
+                    <option value="50">
+                        50%+ Match
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- DYNAMIC OPPORTUNITIES -->
+
+            <div id="opportunitiesGrid">
+
+                <div class="empty-state">
+
+                    <h3>
+                        Loading opportunities...
+                    </h3>
+
+                    <p>
+                        CampusHire is calculating
+                        your matches.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../js/opportunities.js?v=4"></script>
+
+
+</body>
+
+</html>

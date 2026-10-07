@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CampusHire recruiter and company portal login."
+    >
+
+    <title>CampusHire | Recruiter Login</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/recruiter-login.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="page-container">
+
+
+        <!-- =========================================
+             LEFT PANEL
+        ========================================== -->
+
+        <section class="branding-panel">
+
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    C
+                </div>
+
+                <div>
+
+                    <h1>
+                        CampusHire
+                    </h1>
+
+                    <p>
+                        Recruiter Portal
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    SMART CAMPUS RECRUITMENT
+                </span>
+
+
+                <h2>
+                    Find the right talent
+                    <span>faster.</span>
+                </h2>
+
+
+                <p>
+
+                    Connect with eligible students,
+                    create opportunities and manage
+                    recruitment from one intelligent
+                    platform.
+
+                </p>
+
+
+                <!-- FEATURE CARDS -->
+
+                <div class="feature-list">
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            🎯
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Candidate Matching
+                            </strong>
+
+                            <span>
+                                Discover students based on skills and eligibility.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            📋
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Application Management
+                            </strong>
+
+                            <span>
+                                Review and track candidates through each stage.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            📊
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Recruitment Insights
+                            </strong>
+
+                            <span>
+                                Make decisions using structured candidate data.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="panel-footer">
+
+                <span>
+                    CampusHire Recruitment Platform
+                </span>
+
+                <span>
+                    •
+                </span>
+
+                <span>
+                    Recruit smarter
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LOGIN PANEL
+        ========================================== -->
+
+        <main class="login-panel">
+
+
+            <div class="login-container">
+
+
+                <div class="mobile-brand">
+
+                    <div class="mobile-brand-icon">
+                        C
+                    </div>
+
+                    <strong>
+                        CampusHire
+                    </strong>
+
+                </div>
+
+
+
+                <div class="login-heading">
+
+                    <span class="login-label">
+                        RECRUITER ACCESS
+                    </span>
+
+
+                    <h2>
+                        Welcome back
+                    </h2>
+
+
+                    <p>
+                        Sign in to manage opportunities and candidates.
+                    </p>
+
+                </div>
+
+
+
+                <!-- LOGIN FORM -->
+
+                <form
+                    id="recruiterLoginForm"
+                    class="login-form"
+                    novalidate
+                >
+
+
+                    <!-- RECRUITER ID -->
+
+                    <div class="form-group">
+
+                        <label for="recruiterId">
+
+                            Recruiter / Company ID
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="recruiterId"
+                            name="recruiterId"
+                            placeholder="Enter recruiter or company ID"
+                            autocomplete="username"
+                        >
+
+
+                        <small
+                            class="field-error"
+                            id="recruiterIdError"
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <div class="label-row">
+
+                            <label for="recruiterPassword">
+
+                                Password
+
+                                <span>*</span>
+
+                            </label>
+
+
+                            <a
+                                href="#"
+                                id="forgotPassword"
+                            >
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="recruiterPassword"
+                                name="recruiterPassword"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                            >
+
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+
+                        <small
+                            class="field-error"
+                            id="passwordError"
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- REMEMBER -->
+
+                    <div class="login-options">
+
+                        <label class="remember-option">
+
+                            <input
+                                type="checkbox"
+                                id="rememberRecruiter"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+
+                        <span class="secure-login">
+                            🔒 Secure access
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- GENERAL MESSAGE -->
+
+                    <div
+                        class="form-message"
+                        id="formMessage"
+                    ></div>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                        id="loginButton"
+                    >
+
+                        Sign In to Recruiter Portal
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- DEMO INFO -->
+
+                <div class="demo-box">
+
+                    <div class="demo-icon">
+                        💡
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Frontend Demo Access
+                        </strong>
+
+                        <p>
+                            For the current prototype, use the demo recruiter
+                            credentials provided below.
+                        </p>
+
+                        <div class="demo-credentials">
+
+                            <span>
+                                ID: recruiter001
+                            </span>
+
+                            <span>
+                                Password: Recruit@123
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FOOTER -->
+
+                <div class="login-footer">
+
+                    <span>
+                        Are you a student?
+                    </span>
+
+
+                    <a href="student-login.html">
+                        Student Login
+                    </a>
+
+
+                    <span class="footer-separator">
+                        •
+                    </span>
+
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- EXTERNAL JAVASCRIPT -->
+
+    <script src="../js/recruiter-login.js"></script>
+
+</body>
+
+</html>

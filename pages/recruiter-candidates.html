@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CampusHire | Candidates</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/recruiter-candidates.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                CH
+            </div>
+
+            <div>
+
+                <h2>CampusHire</h2>
+
+                <span>
+                    Recruiter Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="nav">
+
+            <a href="recruiter-dashboard.html">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="create-opportunity.html">
+                <span>＋</span>
+                Create Opportunity
+            </a>
+
+            <a
+                href="recruiter-candidates.html"
+                class="active"
+            >
+                <span>♙</span>
+                Candidates
+            </a>
+
+            <a href="recruiter-applications.html">
+                <span>▤</span>
+                Applications
+            </a>
+
+            <a href="#">
+                <span>◔</span>
+                Analytics
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="company-card">
+
+                <div class="company-avatar">
+                    NA
+                </div>
+
+                <div>
+
+                    <strong id="sidebarCompany">
+                        Nova Analytics
+                    </strong>
+
+                    <span>
+                        Recruiter
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    TALENT DISCOVERY
+                </p>
+
+                <h1>
+                    Candidate Matching
+                </h1>
+
+                <p class="subtitle">
+                    Review applicants, understand their
+                    profile fit and move candidates through
+                    your recruitment pipeline.
+                </p>
+
+            </div>
+
+
+            <button
+                id="dashboardBtn"
+                class="dashboard-btn"
+            >
+                ← Dashboard
+            </button>
+
+        </header>
+
+
+
+        <!-- =================================================
+             OPPORTUNITY SELECTOR
+        ================================================== -->
+
+        <section class="selector-section">
+
+            <div>
+
+                <p class="section-label">
+                    SELECT OPPORTUNITY
+                </p>
+
+                <h2>
+                    Review candidates for a role
+                </h2>
+
+            </div>
+
+
+            <select
+                id="opportunitySelect"
+            >
+
+                <option value="">
+                    Select an opportunity
+                </option>
+
+            </select>
+
+        </section>
+
+
+
+        <!-- =================================================
+             OVERVIEW STATS
+        ================================================== -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    ♙
+                </div>
+
+                <div>
+
+                    <strong id="totalCandidates">
+                        0
+                    </strong>
+
+                    <span>
+                        Total Candidates
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ◉
+                </div>
+
+                <div>
+
+                    <strong id="shortlistedCandidates">
+                        0
+                    </strong>
+
+                    <span>
+                        Shortlisted
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ◷
+                </div>
+
+                <div>
+
+                    <strong id="interviewCandidates">
+                        0
+                    </strong>
+
+                    <span>
+                        Interview
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong id="selectedCandidates">
+                        0
+                    </strong>
+
+                    <span>
+                        Selected
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FILTERS
+        ================================================== -->
+
+        <section class="candidate-section">
+
+            <div class="candidate-toolbar">
+
+                <div>
+
+                    <p class="section-label">
+                        APPLICANTS
+                    </p>
+
+                    <h2>
+                        Candidate Pool
+                    </h2>
+
+                </div>
+
+
+                <div class="toolbar-actions">
+
+                    <select id="statusFilter">
+
+                        <option value="">
+                            All Status
+                        </option>
+
+                        <option value="Applied">
+                            Applied
+                        </option>
+
+                        <option value="Shortlisted">
+                            Shortlisted
+                        </option>
+
+                        <option value="Interview">
+                            Interview
+                        </option>
+
+                        <option value="Selected">
+                            Selected
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                    </select>
+
+
+                    <select id="sortFilter">
+
+                        <option value="match">
+                            Highest Match
+                        </option>
+
+                        <option value="latest">
+                            Latest Application
+                        </option>
+
+                        <option value="name">
+                            Candidate Name
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CANDIDATES CONTAINER
+            ================================================== -->
+
+            <div
+                id="candidateContainer"
+                class="candidate-container"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        ♙
+                    </div>
+
+                    <h3>
+                        Select an opportunity
+                    </h3>
+
+                    <p>
+                        Choose an opportunity above to
+                        view its applicants.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="../js/recruiter-candidates.js?v=1"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+php/config/database.php
+
+.vscode/
+Thumbs.db
+.DS_Store
+*.log

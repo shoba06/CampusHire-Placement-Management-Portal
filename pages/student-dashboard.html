@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CampusHire - Student Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/student-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="dashboard-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- BRAND -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    C
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        CampusHire
+                    </h2>
+
+                    <p>
+                        Student Portal
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="navigation">
+
+
+                <!-- DASHBOARD -->
+
+                <a
+                    href="student-dashboard.html"
+                    class="nav-item active"
+                >
+
+                    <span class="nav-icon">
+                        ⌂
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+
+                <!-- MY PROFILE -->
+
+                <a
+                    href="student-register.html"
+                    class="nav-item"
+                    id="profileNav"
+                >
+
+                    <span class="nav-icon">
+                        👤
+                    </span>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+
+
+                <!-- OPPORTUNITIES -->
+
+                <a
+                    href="opportunities.html"
+                    class="nav-item"
+                    id="opportunitiesNav"
+                >
+
+                    <span class="nav-icon">
+                        🎯
+                    </span>
+
+                    <span>
+                        Opportunities
+                    </span>
+
+                </a>
+
+
+
+                <!-- MY APPLICATIONS -->
+
+                <a
+                    href="applications.html"
+                    class="nav-item"
+                    id="applicationsNav"
+                >
+
+                    <span class="nav-icon">
+                        📋
+                    </span>
+
+                    <span>
+                        My Applications
+                    </span>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     NOTIFICATIONS
+                     DIRECT NAVIGATION
+                ================================================== -->
+
+                <a
+                    href="./student-notifications.html"
+                    class="nav-item"
+                    id="notificationsNav"
+                    onclick="window.location.assign('./student-notifications.html'); return false;"
+                >
+
+                    <span class="nav-icon">
+                        🔔
+                    </span>
+
+                    <span>
+                        Notifications
+                    </span>
+
+                    <span
+                        class="nav-count"
+                        id="notificationBadge"
+                        style="display:none;"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+
+                <div class="sidebar-tip">
+
+                    <span>
+                        💡
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Profile Tip
+                        </strong>
+
+                        <p>
+                            Keep your skills and projects updated.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutButton"
+                >
+
+                    <span>
+                        ↪
+                    </span>
+
+                    Logout
+
+                </button>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+
+            <header class="top-bar">
+
+
+                <div>
+
+                    <span class="page-label">
+                        STUDENT DASHBOARD
+                    </span>
+
+
+                    <h1>
+
+                        Welcome back,
+
+                        <span id="studentName">
+                            Student
+                        </span>
+
+                        👋
+
+                    </h1>
+
+
+                    <p>
+                        Here's an overview of your CampusHire profile and career journey.
+                    </p>
+
+                </div>
+
+
+
+                <div class="top-profile">
+
+
+                    <div
+                        class="avatar"
+                        id="studentAvatar"
+                    >
+                        S
+                    </div>
+
+
+                    <div>
+
+                        <strong id="topStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student Profile
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PROFILE STATUS
+            ================================================== -->
+
+            <section class="completion-banner">
+
+
+                <div class="completion-left">
+
+
+                    <div class="completion-icon">
+                        ✓
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            PROFILE STATUS
+                        </span>
+
+
+                        <h2>
+                            Your profile is complete
+                        </h2>
+
+
+                        <p>
+                            Your information is ready to be used for opportunity matching.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="completion-score">
+
+
+                    <strong>
+                        100%
+                    </strong>
+
+
+                    <span>
+                        Complete
+                    </span>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+
+                <!-- TARGET ROLES -->
+
+                <div class="stat-card">
+
+
+                    <div class="stat-icon blue">
+                        🎯
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Target Roles
+                        </span>
+
+
+                        <strong id="roleCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- TECHNICAL SKILLS -->
+
+                <div class="stat-card">
+
+
+                    <div class="stat-icon purple">
+                        💻
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Technical Skills
+                        </span>
+
+
+                        <strong id="skillCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PROJECTS -->
+
+                <div class="stat-card">
+
+
+                    <div class="stat-icon green">
+                        🚀
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Projects
+                        </span>
+
+
+                        <strong id="projectCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- CERTIFICATIONS -->
+
+                <div class="stat-card">
+
+
+                    <div class="stat-icon orange">
+                        🏆
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Certifications
+                        </span>
+
+
+                        <strong id="certificationCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CAREER + SKILLS
+            ================================================== -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- CAREER PROFILE -->
+
+                <div class="dashboard-card career-card">
+
+
+                    <div class="card-header">
+
+
+                        <div>
+
+                            <span class="card-label">
+                                CAREER DIRECTION
+                            </span>
+
+
+                            <h2>
+                                Your Career Profile
+                            </h2>
+
+                        </div>
+
+
+                        <span class="card-icon">
+                            🎯
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="role-display">
+
+
+                        <span class="small-label">
+                            TARGET ROLES
+                        </span>
+
+
+                        <div
+                            class="tag-container"
+                            id="roleTags"
+                        >
+
+                            <span class="empty-tag">
+                                No roles selected
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="career-details">
+
+
+                        <div>
+
+                            <span>
+                                Preferred Industry
+                            </span>
+
+
+                            <strong id="industryText">
+                                Not specified
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Work Preference
+                            </span>
+
+
+                            <strong id="workModeText">
+                                Not specified
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Preferred Location
+                            </span>
+
+
+                            <strong id="locationText">
+                                Not specified
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Expected Package
+                            </span>
+
+
+                            <strong id="salaryText">
+                                Not specified
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SKILL SNAPSHOT -->
+
+                <div class="dashboard-card">
+
+
+                    <div class="card-header">
+
+
+                        <div>
+
+                            <span class="card-label">
+                                TECHNICAL PROFILE
+                            </span>
+
+
+                            <h2>
+                                Skill Snapshot
+                            </h2>
+
+                        </div>
+
+
+                        <span class="card-icon">
+                            💻
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div
+                        class="skill-tags"
+                        id="skillTags"
+                    >
+
+                        <span class="empty-tag">
+                            No skills selected
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="proficiency-box">
+
+
+                        <span>
+                            Overall Proficiency
+                        </span>
+
+
+                        <strong id="proficiencyText">
+                            Not specified
+                        </strong>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 OPPORTUNITY MATCHING
+            ================================================== -->
+
+            <section class="matching-card">
+
+
+                <div class="matching-main">
+
+
+                    <div class="matching-icon">
+                        🎯
+                    </div>
+
+
+                    <div>
+
+
+                        <span class="card-label">
+                            CAMPUSHIRE MATCHING ENGINE
+                        </span>
+
+
+                        <h2>
+                            Discover opportunities that fit your profile
+                        </h2>
+
+
+                        <p>
+                            CampusHire will compare your education, skills,
+                            projects, certifications and career preferences
+                            with recruiter requirements.
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="opportunityButton"
+                >
+
+                    Explore Opportunities
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RECENT ACTIVITY
+            ================================================== -->
+
+            <section class="dashboard-card activity-card">
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <span class="card-label">
+                            CAREER JOURNEY
+                        </span>
+
+
+                        <h2>
+                            Profile Activity
+                        </h2>
+
+                    </div>
+
+
+                    <span class="card-icon">
+                        📈
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item completed">
+
+
+                        <div class="timeline-dot">
+                            ✓
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Profile completed
+                            </strong>
+
+
+                            <p>
+                                Your student profile has been successfully completed.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+
+                        <div class="timeline-dot">
+                            2
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Opportunity matching
+                            </strong>
+
+
+                            <p>
+                                Your profile will be evaluated against available opportunities.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+
+                        <div class="timeline-dot">
+                            3
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Apply & track
+                            </strong>
+
+
+                            <p>
+                                Apply to suitable opportunities and monitor your application status.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CAREER GOAL
+            ================================================== -->
+
+            <section class="goal-card">
+
+
+                <div class="goal-icon">
+                    🚀
+                </div>
+
+
+                <div>
+
+                    <span>
+                        YOUR CAREER GOAL
+                    </span>
+
+
+                    <p id="careerGoalText">
+                        Your career goal will appear here.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         EXISTING DASHBOARD JAVASCRIPT
+    ================================================== -->
+
+    <script
+        src="../js/student-dashboard.js"
+    ></script>
+
+
+
+    <!-- =================================================
+         NOTIFICATION BADGE
+    ================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const badge =
+                    document.getElementById(
+                        "notificationBadge"
+                    );
+
+
+                if (!badge) {
+
+                    return;
+
+                }
+
+
+                try {
+
+                    const raw =
+                        localStorage.getItem(
+                            "campusHireNotifications"
+                        );
+
+
+                    const notifications =
+                        raw
+                            ? JSON.parse(raw)
+                            : [];
+
+
+                    if (
+                        !Array.isArray(
+                            notifications
+                        )
+                    ) {
+
+                        badge.style.display =
+                            "none";
+
+                        return;
+
+                    }
+
+
+                    const unreadCount =
+                        notifications.filter(
+                            function (
+                                notification
+                            ) {
+
+                                return (
+                                    notification &&
+                                    notification.read !== true
+                                );
+
+                            }
+                        ).length;
+
+
+                    if (
+                        unreadCount > 0
+                    ) {
+
+                        badge.textContent =
+                            unreadCount;
+
+
+                        badge.style.display =
+                            "flex";
+
+                    } else {
+
+                        badge.style.display =
+                            "none";
+
+                    }
+
+                } catch (
+                    error
+                ) {
+
+                    console.error(
+                        "Notification badge error:",
+                        error
+                    );
+
+
+                    badge.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

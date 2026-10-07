@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Opportunity | CampusHire</title>
+
+    <link rel="stylesheet" href="../css/create-opportunity.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-icon">CH</div>
+        <div>
+            <h2>CampusHire</h2>
+            <span>Recruiter Portal</span>
+        </div>
+    </div>
+
+    <div class="top-actions">
+        <span id="companyName">Nova Analytics</span>
+        <button id="dashboardBtn" class="outline-btn">
+            ← Dashboard
+        </button>
+    </div>
+
+</header>
+
+
+<main class="page-container">
+
+    <div class="page-header">
+
+        <div>
+            <p class="eyebrow">RECRUITER WORKSPACE</p>
+            <h1>Create New Opportunity</h1>
+            <p class="subtitle">
+                Define the role, eligibility criteria and required skills.
+                CampusHire will use these details for candidate matching.
+            </p>
+        </div>
+
+        <div class="step-indicator">
+            <div class="step active">
+                <span>1</span>
+                Opportunity
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <span>2</span>
+                Candidates
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <span>3</span>
+                Selection
+            </div>
+        </div>
+
+    </div>
+
+
+    <form id="opportunityForm" class="opportunity-form">
+
+        <!-- BASIC INFORMATION -->
+
+        <section class="form-section">
+
+            <div class="section-title">
+                <div class="section-number">01</div>
+
+                <div>
+                    <h2>Opportunity Information</h2>
+                    <p>Provide the basic details of the job or internship.</p>
+                </div>
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="field full-width">
+
+                    <label for="title">
+                        Opportunity Title
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Eg: Data Scientist Intern"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="role">
+                        Job Role
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="role"
+                        placeholder="Eg: Data Scientist"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="opportunityType">
+                        Opportunity Type
+                        <span>*</span>
+                    </label>
+
+                    <select id="opportunityType" required>
+
+                        <option value="">Select type</option>
+                        <option value="Internship">Internship</option>
+                        <option value="Full Time">Full Time</option>
+                        <option value="Internship + Full Time">
+                            Internship + Full Time
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="industry">
+                        Industry
+                        <span>*</span>
+                    </label>
+
+                    <select id="industry" required>
+
+                        <option value="">Select industry</option>
+
+                        <option>Product Technology</option>
+                        <option>FinTech</option>
+                        <option>IT</option>
+                        <option>E-Commerce</option>
+                        <option>Healthcare</option>
+                        <option>EdTech</option>
+                        <option>Cyber Security</option>
+                        <option>Data & AI</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="location">
+                        Location
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Eg: Coimbatore"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="workMode">
+                        Work Mode
+                        <span>*</span>
+                    </label>
+
+                    <select id="workMode" required>
+
+                        <option value="">Select mode</option>
+                        <option>On-site</option>
+                        <option>Hybrid</option>
+                        <option>Remote</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="package">
+                        Expected Package
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="package"
+                        placeholder="Eg: 8–12 LPA"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ELIGIBILITY -->
+
+        <section class="form-section">
+
+            <div class="section-title">
+
+                <div class="section-number">02</div>
+
+                <div>
+                    <h2>Eligibility Criteria</h2>
+                    <p>
+                        Set minimum academic requirements for candidates.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="field">
+
+                    <label for="minCgpa">
+                        Minimum CGPA
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="minCgpa"
+                        min="0"
+                        max="10"
+                        step="0.01"
+                        placeholder="Eg: 7.5"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="maxBacklogs">
+                        Maximum Backlogs
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="maxBacklogs"
+                        min="0"
+                        placeholder="Eg: 0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="graduationYear">
+                        Graduation Year
+                        <span>*</span>
+                    </label>
+
+                    <select id="graduationYear" required>
+
+                        <option value="">Select year</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- REQUIRED SKILLS -->
+
+        <section class="form-section">
+
+            <div class="section-title">
+
+                <div class="section-number">03</div>
+
+                <div>
+                    <h2>Required Skills</h2>
+                    <p>
+                        Add the technical skills required for this opportunity.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="skill-selector">
+
+                <div class="skill-input-row">
+
+                    <input
+                        type="text"
+                        id="skillInput"
+                        placeholder="Eg: Python"
+                    >
+
+                    <button
+                        type="button"
+                        id="addSkillBtn"
+                        class="add-skill-btn"
+                    >
+                        + Add Skill
+                    </button>
+
+                </div>
+
+
+                <div id="skillSuggestions" class="suggestions">
+
+                    <button type="button" data-skill="Java">
+                        Java
+                    </button>
+
+                    <button type="button" data-skill="Python">
+                        Python
+                    </button>
+
+                    <button type="button" data-skill="JavaScript">
+                        JavaScript
+                    </button>
+
+                    <button type="button" data-skill="SQL">
+                        SQL
+                    </button>
+
+                    <button type="button" data-skill="Machine Learning">
+                        Machine Learning
+                    </button>
+
+                    <button type="button" data-skill="Data Science">
+                        Data Science
+                    </button>
+
+                    <button type="button" data-skill="Pandas">
+                        Pandas
+                    </button>
+
+                    <button type="button" data-skill="NumPy">
+                        NumPy
+                    </button>
+
+                    <button type="button" data-skill="React">
+                        React
+                    </button>
+
+                    <button type="button" data-skill="HTML">
+                        HTML
+                    </button>
+
+                    <button type="button" data-skill="CSS">
+                        CSS
+                    </button>
+
+                    <button type="button" data-skill="Git">
+                        Git
+                    </button>
+
+                </div>
+
+
+                <div id="selectedSkills" class="selected-skills">
+
+                    <div class="empty-skills">
+                        No skills added yet.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DESCRIPTION -->
+
+        <section class="form-section">
+
+            <div class="section-title">
+
+                <div class="section-number">04</div>
+
+                <div>
+                    <h2>Opportunity Description</h2>
+                    <p>
+                        Explain the role and responsibilities.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="description">
+                    Description
+                    <span>*</span>
+                </label>
+
+                <textarea
+                    id="description"
+                    rows="7"
+                    maxlength="1000"
+                    placeholder="Describe the role, responsibilities, expectations and other important information..."
+                    required
+                ></textarea>
+
+                <div class="char-count">
+                    <span id="descriptionCount">0</span>/1000
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PREVIEW -->
+
+        <section class="preview-section">
+
+            <div class="preview-header">
+
+                <div>
+                    <p class="eyebrow">LIVE PREVIEW</p>
+                    <h2>Candidate Opportunity Card</h2>
+                </div>
+
+                <span class="preview-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="preview-card">
+
+                <div class="preview-main">
+
+                    <div class="preview-company-icon">
+                        NA
+                    </div>
+
+                    <div>
+
+                        <h3 id="previewTitle">
+                            Opportunity Title
+                        </h3>
+
+                        <p id="previewCompany">
+                            Nova Analytics
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="preview-details">
+
+                    <span id="previewLocation">
+                        📍 Location
+                    </span>
+
+                    <span id="previewMode">
+                        💼 Work Mode
+                    </span>
+
+                    <span id="previewPackage">
+                        💰 Package
+                    </span>
+
+                </div>
+
+
+                <div class="preview-skills" id="previewSkills">
+                    Skills will appear here
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FORM ACTIONS -->
+
+        <div class="form-actions">
+
+            <button
+                type="button"
+                id="cancelBtn"
+                class="secondary-btn"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="submit"
+                class="primary-btn"
+            >
+                Publish Opportunity →
+            </button>
+
+        </div>
+
+    </form>
+
+</main>
+
+
+<script src="../js/create-opportunity.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1090 @@
+/* =====================================================
+   CAMPUSHIRE
+   STUDENT EDUCATION
+===================================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f7f8fc;
+
+    color: #172033;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --primary: #635bff;
+
+    --primary-dark: #5149e8;
+
+    --dark: #172033;
+
+    --text: #667085;
+
+    --muted: #9299a8;
+
+    --border: #e1e4eb;
+
+    --white: #ffffff;
+
+    --success: #24b47e;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.education-header {
+
+    height: 74px;
+
+    padding:
+        0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: white;
+
+    border-bottom:
+        1px solid #e9ebf0;
+}
+
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: -1.2px;
+}
+
+
+.logo span {
+    color: var(--primary);
+}
+
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #858d9d;
+
+    font-size: 10px;
+}
+
+
+.header-right strong {
+
+    color: var(--primary);
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.education-page {
+
+    min-height:
+        calc(100vh - 74px);
+
+    display: grid;
+
+    grid-template-columns:
+        35% 65%;
+}
+
+
+/* =====================================================
+   LEFT SIDEBAR
+===================================================== */
+
+.progress-sidebar {
+
+    padding:
+        55px 10%;
+
+    background:
+        #171d2d;
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.progress-sidebar::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.05);
+
+    right: -190px;
+
+    top: 15%;
+}
+
+
+.progress-sidebar::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(99,91,255,0.08);
+
+    left: -110px;
+
+    bottom: 5%;
+}
+
+
+/* =====================================================
+   SIDEBAR HEADING
+===================================================== */
+
+.progress-heading {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.eyebrow {
+
+    color: #958fff;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+
+.progress-heading h1 {
+
+    margin-top: 16px;
+
+    font-size: 37px;
+
+    line-height: 1.1;
+
+    letter-spacing: -1.8px;
+}
+
+
+.progress-heading h1 span {
+
+    color: #817aff;
+}
+
+
+.progress-heading p {
+
+    margin-top: 17px;
+
+    max-width: 370px;
+
+    color: #aab2c2;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   STEPS
+===================================================== */
+
+.steps {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+.step {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    opacity: 0.42;
+}
+
+
+.step.active,
+.step.completed {
+
+    opacity: 1;
+}
+
+
+.step-circle {
+
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.16);
+
+    color: #aab1c0;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+.step.active .step-circle {
+
+    background:
+        var(--primary);
+
+    border-color:
+        var(--primary);
+
+    color: white;
+
+    box-shadow:
+        0 7px 20px
+        rgba(99,91,255,0.25);
+}
+
+
+.step.completed .step-circle {
+
+    background:
+        var(--success);
+
+    border-color:
+        var(--success);
+
+    color: white;
+}
+
+
+.step-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.step-info strong {
+
+    color: white;
+
+    font-size: 11px;
+}
+
+
+.step-info span {
+
+    color: #8992a4;
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   PROFILE NOTE
+===================================================== */
+
+.profile-note {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    gap: 11px;
+
+    margin-top: 50px;
+
+    padding: 15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255,255,255,0.04);
+}
+
+
+.note-icon {
+
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background:
+        rgba(36,180,126,0.15);
+
+    color: #55d29f;
+}
+
+
+.profile-note strong {
+
+    display: block;
+
+    color: #dce1eb;
+
+    font-size: 10px;
+}
+
+
+.profile-note p {
+
+    margin-top: 5px;
+
+    color: #8790a2;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FORM AREA
+===================================================== */
+
+.form-area {
+
+    padding:
+        55px 7%;
+
+    display: flex;
+
+    justify-content: center;
+
+    background:
+        #f7f8fc;
+}
+
+
+.form-container {
+
+    width:
+        min(
+            760px,
+            100%
+        );
+}
+
+
+/* =====================================================
+   FORM HEADING
+===================================================== */
+
+.form-heading {
+
+    margin-bottom: 30px;
+}
+
+
+.form-step {
+
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.form-heading h2 {
+
+    margin-top: 8px;
+
+    font-size: 30px;
+
+    letter-spacing: -1.2px;
+}
+
+
+.form-heading p {
+
+    margin-top: 7px;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.education-form {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        20px 18px;
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.full-width {
+
+    grid-column:
+        1 / -1;
+}
+
+
+.form-group label {
+
+    color: #30394b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.form-group label span {
+
+    color: #ef5b67;
+}
+
+
+/* =====================================================
+   INPUTS & SELECTS
+===================================================== */
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: white;
+
+    color: var(--dark);
+
+    font-size: 11px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-group select {
+
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+.form-group input::placeholder {
+
+    color: #a7adba;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(99,91,255,0.07);
+}
+
+
+/* =====================================================
+   SMALL HELPER TEXT
+===================================================== */
+
+.form-group small {
+
+    color: #9299a8;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   ACADEMIC STATUS CARD
+===================================================== */
+
+.academic-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        15px;
+
+    border:
+        1px solid #dcefe7;
+
+    border-radius: 10px;
+
+    background:
+        #f0faf6;
+}
+
+
+.status-icon {
+
+    width: 31px;
+    height: 31px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        #24b47e;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+.academic-status strong {
+
+    display: block;
+
+    color: #26785d;
+
+    font-size: 10px;
+}
+
+
+.academic-status p {
+
+    margin-top: 4px;
+
+    color: #6b9384;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.form-actions {
+
+    grid-column:
+        1 / -1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 4px;
+
+    padding-top: 23px;
+
+    border-top:
+        1px solid #e5e7ed;
+}
+
+
+.back-button {
+
+    color: #8b93a2;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.back-button:hover {
+
+    color:
+        var(--primary);
+}
+
+
+.continue-button {
+
+    min-width: 210px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+        var(--primary);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 9px 22px
+        rgba(99,91,255,0.18);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.continue-button:hover {
+
+    background:
+        var(--primary-dark);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.continue-button span {
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .education-page {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .progress-sidebar {
+
+        padding:
+            40px 7%;
+    }
+
+
+    .steps {
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+        margin-top: 30px;
+    }
+
+
+    .step-info span {
+
+        display: none;
+    }
+
+
+    .profile-note {
+
+        display: none;
+    }
+
+
+    .form-area {
+
+        padding:
+            45px 7%;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .education-header {
+
+        height: 65px;
+
+        padding:
+            0 5%;
+    }
+
+
+    .logo {
+
+        font-size: 21px;
+    }
+
+
+    .header-right span {
+
+        display: none;
+    }
+
+
+    .progress-sidebar {
+
+        padding:
+            35px 6%;
+    }
+
+
+    .progress-heading h1 {
+
+        font-size: 31px;
+    }
+
+
+    .steps {
+
+        display: none;
+    }
+
+
+    .form-area {
+
+        padding:
+            35px 6%;
+    }
+
+
+    .form-heading h2 {
+
+        font-size: 27px;
+    }
+
+
+    .education-form {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .full-width {
+
+        grid-column:
+            auto;
+    }
+
+
+    .academic-status {
+
+        grid-column:
+            auto;
+    }
+
+
+    .form-actions {
+
+        grid-column:
+            auto;
+
+        gap: 15px;
+    }
+
+
+    .continue-button {
+
+        min-width: 0;
+
+        flex: 1;
+    }
+
+}
+/* =====================================================
+   EDUCATION FORM VALIDATION
+===================================================== */
+
+.input-error-border {
+
+    border-color: #ef5b67 !important;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(239, 91, 103, 0.07) !important;
+}
+
+
+.field-error {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #ef5b67;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   SUCCESS MESSAGE
+===================================================== */
+
+.education-success {
+
+    grid-column:
+        1 / -1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 2px;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid #c8eddd;
+
+    border-radius: 9px;
+
+    background: #eaf9f3;
+
+    color: #19865d;
+}
+
+
+.education-success .success-icon {
+
+    width: 29px;
+    height: 29px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #24b47e;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+.education-success strong {
+
+    display: block;
+
+    font-size: 10px;
+}
+
+
+.education-success span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #4f8d76;
+
+    font-size: 8px;
+}
+
+
+/* =====================================================
+   COMPLETED BUTTON
+===================================================== */
+
+.continue-button.completed {
+
+    background: #24b47e;
+
+    box-shadow:
+        0 9px 22px
+        rgba(36, 180, 126, 0.18);
+}
+
+
+.continue-button.completed:hover {
+
+    background: #1e9d6e;
+}

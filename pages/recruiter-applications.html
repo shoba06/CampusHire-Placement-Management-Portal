@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CampusHire Recruiter Applications"
+    >
+
+    <title>CampusHire | Applications</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/recruiter-applications.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand-area">
+
+            <div class="brand-logo">
+                C
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    CampusHire
+                </h1>
+
+                <span>
+                    Recruiter Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="recruiter-dashboard.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="create-opportunity.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">💼</span>
+                <span>Opportunities</span>
+            </a>
+
+
+            <a
+                href="recruiter-candidates.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">👥</span>
+                <span>Candidates</span>
+            </a>
+
+
+            <a
+                href="recruiter-applications.html"
+                class="nav-item active"
+            >
+                <span class="nav-icon">📋</span>
+                <span>Applications</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item analytics-link"
+                id="analyticsLink"
+            >
+                <span class="nav-icon">📊</span>
+                <span>Analytics</span>
+            </a>
+
+        </nav>
+
+
+        <!-- COMPANY CARD -->
+
+        <div class="sidebar-bottom">
+
+            <div class="company-card">
+
+                <div class="company-logo">
+                    N
+                </div>
+
+                <div>
+
+                    <strong id="companyNameSidebar">
+                        Nova Analytics
+                    </strong>
+
+                    <span>
+                        Recruiter
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    APPLICATION MANAGEMENT
+                </span>
+
+                <h2>
+                    Applications
+                </h2>
+
+                <p>
+                    Review student applications and track candidates
+                    through your recruitment pipeline.
+                </p>
+
+            </div>
+
+
+            <a
+                href="recruiter-dashboard.html"
+                class="dashboard-button"
+            >
+                ← Dashboard
+            </a>
+
+        </header>
+
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+        ================================================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    📋
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Applications
+                    </span>
+
+                    <strong id="totalApplications">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ◉
+                </div>
+
+                <div>
+
+                    <span>
+                        Under Review
+                    </span>
+
+                    <strong id="underReview">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ◷
+                </div>
+
+                <div>
+
+                    <span>
+                        Interviews
+                    </span>
+
+                    <strong id="interviewCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        Selected
+                    </span>
+
+                    <strong id="selectedCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             APPLICATION CONTROL PANEL
+        ================================================== -->
+
+        <section class="control-panel">
+
+            <div class="control-heading">
+
+                <span class="eyebrow">
+                    APPLICANT PIPELINE
+                </span>
+
+                <h3>
+                    Review Applications
+                </h3>
+
+            </div>
+
+
+            <div class="controls-row">
+
+                <div class="search-box">
+
+                    <span>
+                        🔎
+                    </span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search candidate, role or student ID..."
+                    >
+
+                </div>
+
+
+                <select
+                    id="statusFilter"
+                    class="filter-select"
+                >
+
+                    <option value="All">
+                        All Statuses
+                    </option>
+
+                    <option value="Applied">
+                        Applied
+                    </option>
+
+                    <option value="Shortlisted">
+                        Shortlisted
+                    </option>
+
+                    <option value="Interview">
+                        Interview
+                    </option>
+
+                    <option value="Selected">
+                        Selected
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+
+                <select
+                    id="sortFilter"
+                    class="filter-select"
+                >
+
+                    <option value="newest">
+                        Newest First
+                    </option>
+
+                    <option value="oldest">
+                        Oldest First
+                    </option>
+
+                    <option value="match">
+                        Highest Match
+                    </option>
+
+                    <option value="name">
+                        Candidate Name
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             APPLICATION LIST
+        ================================================== -->
+
+        <section class="applications-section">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span class="eyebrow">
+                        CANDIDATE APPLICATIONS
+                    </span>
+
+                    <h3>
+                        Application Pool
+                    </h3>
+
+                </div>
+
+                <span
+                    class="result-count"
+                    id="resultCount"
+                >
+                    0 applications
+                </span>
+
+            </div>
+
+
+            <div
+                class="applications-list"
+                id="applicationsList"
+            >
+                <!-- Dynamic applications -->
+            </div>
+
+
+            <div
+                class="empty-state"
+                id="emptyState"
+            >
+
+                <div class="empty-icon">
+                    📭
+                </div>
+
+                <h4>
+                    No applications found
+                </h4>
+
+                <p>
+                    Applications matching your current filters
+                    will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="../js/recruiter-applications.js"></script>
+
+</body>
+
+</html>

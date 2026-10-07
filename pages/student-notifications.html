@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CampusHire student notifications."
+    >
+
+    <title>CampusHire | Notifications</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/student-notifications.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="notifications-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- BRAND -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    C
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        CampusHire
+                    </h2>
+
+                    <p>
+                        Student Portal
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="navigation">
+
+
+                <a
+                    href="student-dashboard.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        ⌂
+                    </span>
+
+                    Dashboard
+
+                </a>
+
+
+
+                <a
+                    href="student-register.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        👤
+                    </span>
+
+                    My Profile
+
+                </a>
+
+
+
+                <a
+                    href="opportunities.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        🎯
+                    </span>
+
+                    Opportunities
+
+                </a>
+
+
+
+                <a
+                    href="applications.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        📋
+                    </span>
+
+                    My Applications
+
+                </a>
+
+
+
+                <a
+                    href="student-notifications.html"
+                    class="nav-item active"
+                >
+
+                    <span class="nav-icon">
+                        🔔
+                    </span>
+
+                    Notifications
+
+                    <span
+                        class="nav-count"
+                        id="sidebarUnreadCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+
+                <div class="student-mini-profile">
+
+                    <div
+                        class="mini-avatar"
+                        id="sidebarAvatar"
+                    >
+                        S
+                    </div>
+
+
+                    <div>
+
+                        <strong id="sidebarStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student Profile
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutButton"
+                >
+
+                    <span>
+                        ↪
+                    </span>
+
+                    Logout
+
+                </button>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="page-header">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        NOTIFICATION CENTER
+                    </span>
+
+
+                    <h1>
+                        Notifications
+                    </h1>
+
+
+                    <p>
+                        Stay updated on your applications, recruitment progress and new opportunities.
+                    </p>
+
+                </div>
+
+
+                <div class="header-actions">
+
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="dashboardButton"
+                    >
+                        ← Dashboard
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="markAllReadButton"
+                    >
+                        ✓ Mark All Read
+                    </button>
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 SUMMARY
+            ================================================== -->
+
+            <section class="summary-grid">
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon blue">
+                        🔔
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Total Notifications
+                        </span>
+
+                        <strong id="totalNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon purple">
+                        👀
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Unread
+                        </span>
+
+                        <strong id="unreadNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon green">
+                        ✅
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Application Updates
+                        </span>
+
+                        <strong id="applicationNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon orange">
+                        🎯
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Opportunities
+                        </span>
+
+                        <strong id="opportunityNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NOTIFICATION PANEL
+            ================================================== -->
+
+            <section class="notifications-panel">
+
+
+                <div class="panel-header">
+
+
+                    <div>
+
+                        <span class="panel-label">
+                            ACTIVITY CENTER
+                        </span>
+
+
+                        <h2>
+                            Your Notifications
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        class="notification-count"
+                        id="notificationCountLabel"
+                    >
+                        0 notifications
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- FILTERS -->
+
+                <div class="filter-bar">
+
+
+                    <button
+                        type="button"
+                        class="filter-button active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="unread"
+                    >
+                        Unread
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="application"
+                    >
+                        Applications
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="opportunity"
+                    >
+                        Opportunities
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- NOTIFICATIONS -->
+
+                <div
+                    class="notifications-list"
+                    id="notificationsList"
+                >
+                </div>
+
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                    style="display:none;"
+                >
+
+                    <div class="empty-icon">
+                        🔔
+                    </div>
+
+
+                    <h3>
+                        No notifications
+                    </h3>
+
+
+                    <p>
+                        You're all caught up. New recruitment updates will appear here.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NOTIFICATION INFO
+            ================================================== -->
+
+            <section class="notification-info-card">
+
+
+                <div class="info-icon">
+                    💡
+                </div>
+
+
+                <div>
+
+                    <span>
+                        CAMPUSHIRE UPDATES
+                    </span>
+
+
+                    <h2>
+                        Never miss an important recruitment update.
+                    </h2>
+
+
+                    <p>
+                        CampusHire keeps your application activity organized so you can quickly see when a recruiter changes your application status.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <script
+        src="../js/student-notifications.js"
+    ></script>
+
+
+</body>
+
+</html>
